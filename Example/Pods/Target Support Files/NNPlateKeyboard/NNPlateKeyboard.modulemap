@@ -1,0 +1,6 @@
+framework module NNPlateKeyboard {
+  umbrella header "NNPlateKeyboard-umbrella.h"
+
+  export *
+  module * { export * }
+}

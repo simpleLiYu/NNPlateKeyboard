@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'NNPlateKeyboard_Example' do
+  pod 'NNPlateKeyboard', :path => '../'
+
+  target 'NNPlateKeyboard_Tests' do
+    inherit! :search_paths
+
+#    pod 'FBSnapshotTestCase' , '~> 2.1.4'
+  end
+end
