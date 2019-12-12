@@ -97,8 +97,8 @@
 		952F03A10A95109E95C3E6CE618036C8 /* NSObject+Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D350F7118444CFCD35FB9AB0D678FA /* NSObject+Define.swift */; };
 		95708AB4ABB57F668E5F9A2C5DFAF641 /* DispatchQueue+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A1E546F143D756E1AB850892532A10 /* DispatchQueue+Helper.swift */; };
 		9628963CE635DDF59E440B7393E3887E /* UIGestureRecognizer+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D8370A200C97EC41B357B821A94C0D /* UIGestureRecognizer+Helper.swift */; };
+		98D3E07E07FE72728BA85AF6A160A2C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF921B478E05EF8F7DC0D2A982CC5EDF /* Assets.xcassets */; };
 		9AF429198954235D20952BF4E80AD786 /* NNPlateKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705DEF84A18AEF68FF982D3D9386FF /* NNPlateKeyboard.swift */; };
-		9C23B18EB734DB4F6870024E6042C8C7 /* SwiftExpand.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 319382E5D44416E9847B855CB477C25D /* SwiftExpand.bundle */; };
 		9C82CC69734F337421B1FDD3BFBBD63A /* SwiftExpand.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BCF4EAE37B0DB3D65443620EAE6902 /* SwiftExpand.framework */; };
 		9CBD5B0884495CDAD70E028F657BBB69 /* NSBundle+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45A4B61B0AE59F4C23F45943792976 /* NSBundle+Helper.swift */; };
 		9CFD14FC07B9D3DD04F045A2377B9BFD /* CALayer+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1A3D406AE682274F7E81FF84253A87 /* CALayer+Helper.swift */; };
@@ -283,7 +283,6 @@
 		2F26F394C18B9221DFE146BFB4FA672D /* UITableHeaderFooterView+Add.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITableHeaderFooterView+Add.swift"; path = "SwiftExpand/UITableHeaderFooterView+Add.swift"; sourceTree = "<group>"; };
 		2F6698A49DE7E3BD5E911198021AE857 /* SwiftExpand.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = SwiftExpand.bundle; path = "SwiftExpand-SwiftExpand.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FBDD7ADB2DF6CA09AA1E3487155005B /* UIView+Add.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Add.swift"; path = "SwiftExpand/UIView+Add.swift"; sourceTree = "<group>"; };
-		319382E5D44416E9847B855CB477C25D /* SwiftExpand.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SwiftExpand.bundle; path = SwiftExpand/SwiftExpand.bundle; sourceTree = "<group>"; };
 		31A2F58976A7791856CA3986A9B84EA6 /* Pods-NNPlateKeyboard_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NNPlateKeyboard_Tests-dummy.m"; sourceTree = "<group>"; };
 		32642C43CDEAACCC4002C2F37A19D8CF /* CABasicAnimation+Helper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CABasicAnimation+Helper.swift"; path = "SwiftExpand/CABasicAnimation+Helper.swift"; sourceTree = "<group>"; };
 		32F79FFC9ED2E49F044FFFD9D2FFF040 /* Pods-NNPlateKeyboard_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NNPlateKeyboard_Example-umbrella.h"; sourceTree = "<group>"; };
@@ -377,6 +376,7 @@
 		B8BB7D130DFD9C4C68D538FF4FEFDF88 /* UICollectionReusableView+Helper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UICollectionReusableView+Helper.swift"; path = "SwiftExpand/UICollectionReusableView+Helper.swift"; sourceTree = "<group>"; };
 		BBCA0325FF06724C4B7A17454EFEDDDC /* Pods-NNPlateKeyboard_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NNPlateKeyboard_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		BDB03C7FCFB4A2FB19DAA0D161BB34A4 /* UITextView+Helper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITextView+Helper.swift"; path = "SwiftExpand/UITextView+Helper.swift"; sourceTree = "<group>"; };
+		BF921B478E05EF8F7DC0D2A982CC5EDF /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = SwiftExpand/Assets.xcassets; sourceTree = "<group>"; };
 		BFC292C705CEBEE3C7E55470414E6C61 /* Pods-NNPlateKeyboard_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NNPlateKeyboard_Example-dummy.m"; sourceTree = "<group>"; };
 		C05FD723D8F9AF3DE3EFFAE8CCFD63EC /* ConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintItem.swift; path = Source/ConstraintItem.swift; sourceTree = "<group>"; };
 		C08B69F62FC32D9481A8241F4462AB66 /* NSMutableParagraphStyle+Helper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSMutableParagraphStyle+Helper.swift"; path = "SwiftExpand/NSMutableParagraphStyle+Helper.swift"; sourceTree = "<group>"; };
@@ -544,6 +544,14 @@
 			path = "Target Support Files/Pods-NNPlateKeyboard_Example";
 			sourceTree = "<group>";
 		};
+		10933B3FA483E16A39FDD2A40BD34F8A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BF921B478E05EF8F7DC0D2A982CC5EDF /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		1C6209204AF9CF0C3CD7B8E2B085D241 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
@@ -645,7 +653,7 @@
 				4B474F19C27C9BAE4EE4AF5D1E0D186A /* UIViewController+Hook.swift */,
 				AC3BB181BE0007F9ED4B4385D9B5D942 /* UserDefaults+Helper.swift */,
 				981A1091DAA5FC4DF33246BC1EE31301 /* WKWebView+Helper.swift */,
-				C43144155577A39BB60EDDFD404CFD8C /* Resources */,
+				10933B3FA483E16A39FDD2A40BD34F8A /* Resources */,
 				242B5F433AAD743FA06757AE47042DB1 /* Support Files */,
 			);
 			name = SwiftExpand;
@@ -843,14 +851,6 @@
 			path = "Target Support Files/Pods-NNPlateKeyboard_Tests";
 			sourceTree = "<group>";
 		};
-		C43144155577A39BB60EDDFD404CFD8C /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				319382E5D44416E9847B855CB477C25D /* SwiftExpand.bundle */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
@@ -1021,7 +1021,7 @@
 			buildPhases = (
 				8C21334BAE4B80BDB0F30FA715640314 /* Sources */,
 				E96763B223871EE575D9250AD92B9A5E /* Frameworks */,
-				9FE3C9CACAD6500FA4DDEE4AAD40BD15 /* Resources */,
+				8A594C64CEF1F6BE7C75B27E667BC2C3 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -1134,18 +1134,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8A594C64CEF1F6BE7C75B27E667BC2C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98D3E07E07FE72728BA85AF6A160A2C3 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8C0555216DB7B8223235BA41EAD39BA4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9FE3C9CACAD6500FA4DDEE4AAD40BD15 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9C23B18EB734DB4F6870024E6042C8C7 /* SwiftExpand.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,7 +19,7 @@ import SwiftExpand
     @objc public var plateNumber = "" {
         willSet{
             inputIndex = min(maxCount - 1, newValue.count)
-            print("plateNumber_\(newValue)_\(inputIndex)")
+            DDLog("plateNumber_\(newValue)_\(inputIndex)")
 
             keyboardAccessoryView.plateNumber = newValue
             keyboardView.plateNumber = newValue;
@@ -60,14 +60,14 @@ import SwiftExpand
         let isPlateCount8 = (numType == .newEnergy || numType == .wuJing);
         maxCount = isPlateCount8 ? 8 : 7
 
-        print("之前:changeKeyboardNumType:\(maxCount)_\(plateNumber)_\(inputIndex)")
+        DDLog("之前:changeKeyboardNumType:\(maxCount)_\(plateNumber)_\(inputIndex)")
         if plateNumber.count >= maxCount {
             plateNumber = (plateNumber as NSString).substring(to: maxCount)
             inputIndex = maxCount - 1
         } else {
             inputIndex = plateNumber.count
         }
-        print("之后:changeKeyboardNumType:\(maxCount)_\(plateNumber)_\(inputIndex)")
+        DDLog("之后:changeKeyboardNumType:\(maxCount)_\(plateNumber)_\(inputIndex)")
 
         keyboardView.updateKeyboard(isMoreType: false)
     }
@@ -78,8 +78,13 @@ import SwiftExpand
     @objc public func bindTextField(_ textField: UITextField, showSearch: Bool = false) {
         textField.font = UIFont.systemFont(ofSize: 13)
         textField.placeholder = " 请输入车牌号码";
-        textField.setupLeftView(image: UIImage(named: "search_bar"))
-        
+        if showSearch {
+//            textField.setupLeftView(image: UIImage(named: "search_bar"))
+            textField.setupLeftView(image: NNPlateKeyboard.image(named: "search_bar"))
+//            textField.setupLeftView(image: Bundle.image(named: "search_bar", podClassName: "NNPlateKeyboard"))
+            
+        }
+
         inputTextfield = textField
         inputTextfield.inputView = keyboardView
         inputTextfield.inputAccessoryView = keyboardAccessoryView
@@ -103,7 +108,7 @@ import SwiftExpand
     }()
 
     @objc private func handleActionBtn(_ sender: UIButton) {
-        print("inputIndex_\(inputIndex)")
+        DDLog("inputIndex_\(inputIndex)")
 
         sender.isSelected = !sender.isSelected;
         changeKeyboardNumType(isNewEnergy: sender.isSelected)

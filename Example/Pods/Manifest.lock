@@ -1,12 +1,12 @@
 PODS:
-  - NNPlateKeyboard (1.0.0):
+  - NNPlateKeyboard (1.0.2):
     - SnapKit
     - SnapKitExtend
     - SwiftExpand
   - SnapKit (4.2.0)
   - SnapKitExtend (1.0.7):
     - SnapKit
-  - SwiftExpand (1.9.6.5)
+  - SwiftExpand (1.9.6.8)
 
 DEPENDENCIES:
   - NNPlateKeyboard (from `../`)
@@ -22,10 +22,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  NNPlateKeyboard: 8c89731ce1d382e2f096298a25741ea34775eb0c
+  NNPlateKeyboard: 516098686bfccefb9bfd093c9f3f537c34d5f9f6
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SnapKitExtend: 00ee4db6d1f80bee01a1e75745f2a6ae695ba662
-  SwiftExpand: ddc3964165a705ac369747924a4ecfb43c22647c
+  SwiftExpand: b1ea122b23ce3297c31d3168d740bf0972075e20
 
 PODFILE CHECKSUM: 443d944ea7c37bc599911d2bb23dd73dccf850d8
 
