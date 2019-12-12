@@ -82,7 +82,6 @@ import SwiftExpand
 //            textField.setupLeftView(image: UIImage(named: "search_bar"))
             textField.setupLeftView(image: NNPlateKeyboard.image(named: "search_bar"))
 //            textField.setupLeftView(image: Bundle.image(named: "search_bar", podClassName: "NNPlateKeyboard"))
-            
         }
 
         inputTextfield = textField
