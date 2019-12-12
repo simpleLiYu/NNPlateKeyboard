@@ -63,27 +63,19 @@ class NNKeyboardEngine: NSObject {
     static let kSTR_Sure    = "确定"
     /// (第一位)默认省份
     static let kSTR_Keyboard_PVS = "京,津,晋,冀,蒙,辽,吉,黑,沪,苏,浙,皖,闽,赣,鲁,豫,鄂,湘,粤,桂,琼,渝,川,贵,云,藏,陕,甘,青,宁,新,台," + kSTR_More + kSTR_Delete + kSTR_Sure
-//    /// (第一位)更多键盘
-//    static let kSTR_Keyboard_PVS_More = kSTR_NUM + kSTR_Q_Y + "C,V,B,N" + kSTR_A_L + kSTR_ZX + kCHAR_MIN + kCHAR_SHI + kSTR_Back + kSTR_Delete + kSTR_Sure
-//
-//    static let kSTR_Keyboard = kSTR_NUM + kSTR_Q_P + kSTR_A_L + "M," + kSTR_Z_N + kSTR_Delete + kSTR_Sure
-//    /// 第一位是民,次位只能是航其他置灰
-//    static let kSTR_Keyboard_MIN = kCHAR_SPECIAL + kSTR_NUM + kSTR_ABCDEFGHJKWXYZ + kSTR_Back + kSTR_Delete + kSTR_Sure
 
-//    static let kSTR_2 = kSTR_Keyboard
-//    /// 前两位是武警,第三位更多置灰
-//    static let kSTR_2_WJ = kSTR_Keyboard_PVS
-            
     // MARK: - funtins
+    /// 注册键位及其状态
     class func generateLayout(inputIndex: Int,
                               plateNumber: String,
                               numberType: NNKeyboardNumType,
                               isMoreType: Bool) -> NNKeyboardLayout {
-        var detectedNumType = numberType
-        if numberType == .auto {
-            detectedNumType = NNKeyboardEngine.detectNumTypeOf(plateNumber: plateNumber)
-        }
-
+//        var detectedNumType = numberType
+//        if numberType == .auto {
+//            detectedNumType = NNKeyboardEngine.detectNumTypeOf(plateNumber: plateNumber)
+//        }
+        // 根据车牌自动推断车牌类型
+        let detectedNumType = NNKeyboardEngine.detectNumTypeOf(plateNumber: plateNumber)
         //获取键位布局
         var layout = NNKeyboardEngine.getKeyProvider(inputIndex: inputIndex, plateNumber: plateNumber, isMoreType: isMoreType)
         //键位状态注册
