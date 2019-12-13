@@ -80,8 +80,8 @@ import SwiftExpand
         textField.placeholder = " 请输入车牌号码";
         if showSearch {
 //            textField.setupLeftView(image: UIImage(named: "search_bar"))
-            textField.setupLeftView(image: NNPlateKeyboard.image(named: "search_bar"))
-//            textField.setupLeftView(image: Bundle.image(named: "search_bar", podClassName: "NNPlateKeyboard"))
+            textField.setupLeftView(image: UIImage.image(named: "search_bar", podClass: NNPlateKeyboard.self))
+//            textField.setupLeftView(image: UIImage.image(named: "search_bar", podClassName: "NNPlateKeyboard"))
         }
 
         inputTextfield = textField
@@ -175,38 +175,3 @@ extension NNPlateKeyboard: NNKeyboardAccessoryViewDeleagte{
 
 }
 
-
-public extension NNPlateKeyboard{
-    /// 获取当前 bundle 中的图片资源
-    @objc static func image(named name: String) -> UIImage?{
-        if let image = UIImage(named: "\(self).bundle/Image/\(name)") {
-            return image;
-        }
-
-        let framework = Bundle(for: self)
-        let filePath = framework.resourcePath! + "/\(self).bundle"
-        if let bundle = Bundle(path: filePath) {
-            let image = UIImage(named: name, in: bundle, compatibleWith: nil)
-            return image;
-        }
-        return nil;
-    }
-    
-//    @objc static func image(named name: String) -> UIImage?{
-//        if let image = UIImage(named: "\(self).bundle/Image/\(name)") {
-//            return image;
-//        }
-//
-//        let framework = Bundle(for: self)
-////        let url = bundle.url(forResource: "\(self)", withExtension: "bundle")
-////        let image = UIImage(named: name, in: bundle, compatibleWith: nil)
-//        let filePath = framework.resourcePath! + "/\(self).bundle"
-//
-////        let url = Bundle(for: self).url(forResource: "\(self)", withExtension: "bundle")
-////        let bundleNew = Bundle(url: url!)
-//        let bundle = Bundle(path: filePath)
-//
-//        let image = UIImage(named: name, in: bundleNew, compatibleWith: nil)
-//        return image;
-//    }
-}

@@ -1,18 +1,18 @@
 PODS:
-  - NNPlateKeyboard (1.0.2):
+  - NNPlateKeyboard (1.0.7):
     - SnapKit
     - SnapKitExtend
     - SwiftExpand
   - SnapKit (4.2.0)
   - SnapKitExtend (1.0.7):
     - SnapKit
-  - SwiftExpand (1.9.6.8)
+  - SwiftExpand (1.9.7.1)
 
 DEPENDENCIES:
   - NNPlateKeyboard (from `../`)
 
 SPEC REPOS:
-  trunk:
+  https://github.com/CocoaPods/Specs.git:
     - SnapKit
     - SnapKitExtend
     - SwiftExpand
@@ -22,11 +22,11 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  NNPlateKeyboard: 516098686bfccefb9bfd093c9f3f537c34d5f9f6
+  NNPlateKeyboard: 9673f0db1a7f50077731dd73ec559f5be72ea49f
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SnapKitExtend: 00ee4db6d1f80bee01a1e75745f2a6ae695ba662
-  SwiftExpand: b1ea122b23ce3297c31d3168d740bf0972075e20
+  SwiftExpand: 60be6b25fc904e3aa9ed8b0326a4f96cf315a74e
 
-PODFILE CHECKSUM: 443d944ea7c37bc599911d2bb23dd73dccf850d8
+PODFILE CHECKSUM: 962cb3207633ddc93b3d74cdff798ec8a8966943
 
 COCOAPODS: 1.8.4

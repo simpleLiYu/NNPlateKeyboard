@@ -44,7 +44,7 @@ class NNKeyboardView: UIView {
     lazy var promptView: UIImageView = {
         let view = UIImageView()
         view.frame = CGRect(x: 0, y: 0, width: 55, height: 74)
-        view.image = NNPlateKeyboard.image(named: "pressed")
+        view.image = UIImage.image(named: "pressed", podClass: NNPlateKeyboard.self)
         
         var label: UILabel {
             let view = UILabel(frame: CGRectMake(0, 0, 55, 55))

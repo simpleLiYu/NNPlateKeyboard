@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'NNPlateKeyboard'
-  s.version          = '1.0.6'
+  s.version          = '1.0.7'
   s.summary          = '车牌键盘重构（重写级别）'
   s.description      = '车牌键盘重构（重写级别）,详情见代码'
 

@@ -101,8 +101,8 @@ class NNKeyboardAccessoryView: UIView {
 //        view.setImage(UIImage(named: "plateNumberSwitch_H"), for: .selected)
 //        let image = UIImage(named: "\(NNPlateKeyboard.self).bundle/Image/plateNumberSwitch_N")
 //        let imageH = UIImage(named: "\(NNPlateKeyboard.self).bundle/Image/plateNumberSwitch_H")
-        view.setImage(NNPlateKeyboard.image(named: "plateNumberSwitch_N"), for: .normal)
-        view.setImage(NNPlateKeyboard.image(named: "plateNumberSwitch_H"), for: .selected)
+        view.setImage(UIImage.image(named: "plateNumberSwitch_N", podClass: NNPlateKeyboard.self), for: .normal)
+        view.setImage(UIImage.image(named: "plateNumberSwitch_H", podClass: NNPlateKeyboard.self), for: .selected)
         
         view.imageEdgeInsets = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
         view.imageView?.contentMode = .scaleAspectFit
