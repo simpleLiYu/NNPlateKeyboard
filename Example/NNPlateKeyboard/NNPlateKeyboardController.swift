@@ -33,8 +33,15 @@ class NNPlateKeyboardController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        IQKeyboardManager.shared.enable = false;
 
         textField.text = ""
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        IQKeyboardManager.shared.enable = true;
     }
     
     //MARK: -lazy
