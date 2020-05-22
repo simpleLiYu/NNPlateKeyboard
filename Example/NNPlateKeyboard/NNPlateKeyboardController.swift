@@ -9,6 +9,7 @@
 import UIKit
 import SwiftExpand
 import NNPlateKeyboard
+import IQKeyboardManagerSwift
 
 class NNPlateKeyboardController: UIViewController {
 

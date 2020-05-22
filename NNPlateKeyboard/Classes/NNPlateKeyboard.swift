@@ -10,22 +10,24 @@ import UIKit
 import SwiftExpand
 
 @objc public protocol NNPlateKeyboardDeleagte {
-    @objc func plateDidChange(plate: String, complete: Bool)
+    @objc func plateDidChange(_ plate: String, complete: Bool)
 }
-
+/// 车牌号键盘
 @objc public class NNPlateKeyboard: NSObject {
+    @objc public weak var delegate: NNPlateKeyboardDeleagte?
 
-    //当前格子中的输入内容
+    ///当前格子中的输入内容
     @objc public var plateNumber = "" {
         willSet{
             inputIndex = min(maxCount - 1, newValue.count)
-            DDLog("plateNumber_\(newValue)_\(inputIndex)")
+//            DDLog("plateNumber_\(newValue)_\(inputIndex)")
 
             keyboardAccessoryView.plateNumber = newValue
             keyboardView.plateNumber = newValue;
             inputTextfield.text = newValue;
         }
     }
+    ///最大车牌号位数
     @objc public var maxCount = 7 {
         willSet{
             keyboardAccessoryView.maxCount = newValue
@@ -44,11 +46,9 @@ import SwiftExpand
             keyboardView.numType = newValue;
         }
     }
-    
-    @objc public weak var delegate: NNPlateKeyboardDeleagte?
-
+    ///当前输入框
     var inputTextfield: UITextField!
-
+    ///改变键盘类型
     @objc public func changeKeyboardNumType(isNewEnergy: Bool){
         guard let keyboardView = inputTextfield.inputView as? NNKeyboardView else { return }
         keyboardView.numType = isNewEnergy ? .newEnergy : .auto
@@ -60,21 +60,19 @@ import SwiftExpand
         let isPlateCount8 = (numType == .newEnergy || numType == .wuJing);
         maxCount = isPlateCount8 ? 8 : 7
 
-        DDLog("之前:changeKeyboardNumType:\(maxCount)_\(plateNumber)_\(inputIndex)")
+//        DDLog("之前:changeKeyboardNumType:\(maxCount)_\(plateNumber)_\(inputIndex)")
         if plateNumber.count >= maxCount {
             plateNumber = (plateNumber as NSString).substring(to: maxCount)
             inputIndex = maxCount - 1
         } else {
             inputIndex = plateNumber.count
         }
-        DDLog("之后:changeKeyboardNumType:\(maxCount)_\(plateNumber)_\(inputIndex)")
+//        DDLog("之后:changeKeyboardNumType:\(maxCount)_\(plateNumber)_\(inputIndex)")
 
         keyboardView.updateKeyboard(isMoreType: false)
     }
     
-    /*
-     将车牌输入框绑定到 UITextField
-     **/
+    ///将车牌输入框绑定到 UITextField
     @objc public func bindTextField(_ textField: UITextField, showSearch: Bool = false) {
         textField.font = UIFont.systemFont(ofSize: 13)
         textField.placeholder = " 请输入车牌号码";
@@ -88,15 +86,14 @@ import SwiftExpand
         inputTextfield.inputView = keyboardView
         inputTextfield.inputAccessoryView = keyboardAccessoryView
     }
-    
+    ///键盘视图
     @objc lazy var keyboardView: NNKeyboardView = {
-        let view: NNKeyboardView = NNKeyboardView(frame: .zero)
-//        view.mainColor = mainColor
+        let view = NNKeyboardView(frame: .zero)
         view.delegate = self
 
         return view
     }()
-        
+    ///键盘辅助视图
     @objc lazy var keyboardAccessoryView: NNKeyboardAccessoryView = {
         let view: NNKeyboardAccessoryView = NNKeyboardAccessoryView(frame: .zero)
         view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50);
@@ -107,8 +104,7 @@ import SwiftExpand
     }()
 
     @objc private func handleActionBtn(_ sender: UIButton) {
-        DDLog("inputIndex_\(inputIndex)")
-
+//        DDLog("inputIndex_\(inputIndex)")
         sender.isSelected = !sender.isSelected;
         changeKeyboardNumType(isNewEnergy: sender.isSelected)
     }
@@ -134,11 +130,11 @@ extension NNPlateKeyboard: NNKeyBoardViewDeleagte{
 
         case NNKeyboardEngine.kSTR_Sure:
             UIApplication.shared.keyWindow?.endEditing(true)
-            delegate?.plateDidChange(plate: plateNumber, complete: true)
+            delegate?.plateDidChange(plateNumber, complete: true)
             return;
             
         default:
-            DDLog("之前:\(key) \(plateNumber) \(plateNumber.count) \(inputIndex)")
+//            DDLog("之前:\(key) \(plateNumber) \(plateNumber.count) \(inputIndex)")
             if keyboardView.numType != .newEnergy {
                 keyboardView.numType = NNKeyboardEngine.detectNumTypeOf(plateNumber: plateNumber)
             }
@@ -153,13 +149,13 @@ extension NNPlateKeyboard: NNKeyBoardViewDeleagte{
                 }
             }
         }
-        DDLog("之后:\(key) \(plateNumber) \(plateNumber.count) \(inputIndex)")
+//        DDLog("之后:\(key) \(plateNumber) \(plateNumber.count) \(inputIndex)")
         if plateNumber.count <= maxCount {
             keyboardView.updateKeyboard(isMoreType: isMoreType)
         }
 
         if !isMoreType {
-            delegate?.plateDidChange(plate: plateNumber, complete: (plateNumber.count == maxCount))
+            delegate?.plateDidChange(plateNumber, complete: (plateNumber.count == maxCount))
         }
     }
    
