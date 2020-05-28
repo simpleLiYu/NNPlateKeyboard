@@ -18,7 +18,7 @@ class NNKeyboardAccessoryView: UIView {
     var maxCount: Int = 7 {
         willSet{
             _ = changeLayoutItemSize(newValue)
-            collectionView.reloadData();
+            collectionView.reloadData()
         }
     }
     
@@ -26,7 +26,10 @@ class NNKeyboardAccessoryView: UIView {
 
     var plateNumber: String = ""{
         willSet{
-            collectionView.reloadData();
+            guard newValue.count < 7 else { return }
+            maxCount = (newValue.count == 7 ? 7 : 8)
+//            _ = changeLayoutItemSize(count)
+//            collectionView.reloadData()
         }
     }
     
@@ -57,17 +60,16 @@ class NNKeyboardAccessoryView: UIView {
             make.top.left.bottom.equalToSuperview();
             make.right.equalTo(switchBtn.snp.left);
         }
-        
+
         let itemSize = changeLayoutItemSize(maxCount)
         selectView.frame = CGRect(x: selectView.frame.minX, y: selectView.frame.minY, width: itemSize.width, height: selectView.frame.height)
-        
     }
 
     // MARK: - funtions
     /// 改变 cell 尺寸
     func changeLayoutItemSize(_ maxCount: Int) -> CGSize {
         guard let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return CGSize.zero}
-        let width = (collectionView.bounds.width - (CGFloat(maxCount) - 1)*layout.minimumLineSpacing)/CGFloat(maxCount);
+        let width = (bounds.width - (CGFloat(maxCount) - 1)*layout.minimumLineSpacing - 70)/CGFloat(maxCount);
         layout.itemSize = CGSize(width: width, height: collectionView.bounds.height)
         return layout.itemSize;
     }
@@ -85,9 +87,9 @@ class NNKeyboardAccessoryView: UIView {
         view.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "UICollectionViewCell")
         view.register(UICTViewCellKeyBoardAccessoryView.self, forCellWithReuseIdentifier: "UICTViewCellKeyBoardAccessoryView")
         
-        view.autoresizingMask = [.flexibleWidth, .flexibleHeight];
+        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 //        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = .white
         view.isScrollEnabled = false
         
         view.delegate = self
@@ -113,11 +115,6 @@ class NNKeyboardAccessoryView: UIView {
         return view;
     }()
     
-//    @objc private func handleActionBtn(_ sender: UIButton) {
-//        sender.isSelected = !sender.isSelected;
-////        changeInputType(isNewEnergy: sender.isSelected)
-//    }
-    
     lazy var selectView: UIView = {
         let view: UIView = UIView()
         view.layer.borderWidth = 1.5
@@ -141,16 +138,6 @@ extension NNKeyboardAccessoryView: UICollectionViewDataSource, UICollectionViewD
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UICTViewCellKeyBoardAccessoryView", for: indexPath) as! UICTViewCellKeyBoardAccessoryView
         cell.layer.borderWidth = 0.5
         cell.layer.borderColor = UIColor.line.cgColor
-
-//        if plateNumber.count > indexPath.row {
-//            if indexPath.row == maxCount - 1 {
-//                selectView.frame = cell.frame
-//            }
-//        } else {
-//            if indexPath.row == plateNumber.count {
-//                selectView.frame = cell.frame
-//            }
-//        }
 
         if indexPath.row == inputIndex {
             selectView.frame = cell.frame

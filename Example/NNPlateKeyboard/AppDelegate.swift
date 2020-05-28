@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true;
 
         // Override point for customization after application launch.
-        let navController = UINavigationController(vcName: "NNPlateKeyboardController")
+        let navController = UINavigationController(vcName: "HomeViewController")
         UIApplication.mainWindow.rootViewController = navController
         return true
     }

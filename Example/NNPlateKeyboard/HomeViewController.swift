@@ -21,7 +21,8 @@ class HomeViewController: UIViewController {
         title = "车牌键盘"
 //        view.backgroundColor = UIColor.red
         _ = createBtnBarItem("重构") { (reco, itemView, idx) in
-            self.navigationController?.pushViewController(self.controller, animated: true);
+            let controller = NNPlateKeyboardController()
+            self.navigationController?.pushViewController(controller, animated: true);
         }
         
         textField.frame = CGRect.make(10, 20, kScreenWidth - 20, 35)

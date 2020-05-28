@@ -19,6 +19,7 @@ import SwiftExpand
     ///当前格子中的输入内容
     @objc public var plateNumber = "" {
         willSet{
+            guard newValue.count >= 7 else { return }
             inputIndex = min(maxCount - 1, newValue.count)
 //            DDLog("plateNumber_\(newValue)_\(inputIndex)")
 
@@ -68,7 +69,6 @@ import SwiftExpand
             inputIndex = plateNumber.count
         }
 //        DDLog("之后:changeKeyboardNumType:\(maxCount)_\(plateNumber)_\(inputIndex)")
-
         keyboardView.updateKeyboard(isMoreType: false)
     }
     
@@ -77,9 +77,9 @@ import SwiftExpand
         textField.font = UIFont.systemFont(ofSize: 13)
         textField.placeholder = " 请输入车牌号码";
         if showSearch {
-//            textField.setupLeftView(image: UIImage(named: "search_bar"))
-            textField.setupLeftView(image: UIImage.image(named: "search_bar", podClass: NNPlateKeyboard.self))
-//            textField.setupLeftView(image: UIImage.image(named: "search_bar", podClassName: "NNPlateKeyboard"))
+//            let image = UIImage(named: "search_bar")
+            let image = UIImage.image(named: "search_bar", podClass: NNPlateKeyboard.self)
+            textField.setupLeftView(image: image)
         }
 
         inputTextfield = textField
@@ -95,8 +95,8 @@ import SwiftExpand
     }()
     ///键盘辅助视图
     @objc lazy var keyboardAccessoryView: NNKeyboardAccessoryView = {
-        let view: NNKeyboardAccessoryView = NNKeyboardAccessoryView(frame: .zero)
-        view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50);
+        let view = NNKeyboardAccessoryView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+//        view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50);
         view.maxCount = 7
         view.delegate = self
         view.switchBtn.addTarget(self, action: #selector(handleActionBtn), for: .touchUpInside)

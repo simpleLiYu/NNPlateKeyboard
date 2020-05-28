@@ -140,7 +140,6 @@ class NNKeyboardView: UIView {
     }
     
     // MARK: - lazy
-    
     lazy var collectionView: UICollectionView = {
         // 初始化
         let layout = UICollectionViewFlowLayout()

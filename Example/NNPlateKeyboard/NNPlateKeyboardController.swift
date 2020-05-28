@@ -28,7 +28,8 @@ class NNPlateKeyboardController: UIViewController {
         _ = view.addGestureTap { (reco) in
             self.textField.resignFirstResponder()
         }
-                
+              
+        plateKeyboard.plateNumber = "京12345"
         view.getViewLayer()
     }
     
@@ -75,7 +76,7 @@ extension NNPlateKeyboardController: UITextFieldDelegate {
 
 extension NNPlateKeyboardController: NNPlateKeyboardDeleagte {
 
-    func plateDidChange(plate: String, complete: Bool) {
+    func plateDidChange(_ plate: String, complete: Bool) {
         textField.text = plate
     }
 }
