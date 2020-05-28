@@ -28,8 +28,10 @@ class NNKeyboardAccessoryView: UIView {
         willSet{
             guard newValue.count < 7 else { return }
             maxCount = (newValue.count == 7 ? 7 : 8)
-//            _ = changeLayoutItemSize(count)
-//            collectionView.reloadData()
+            if newValue.count == maxCount {
+                _ = changeLayoutItemSize(maxCount)
+                collectionView.reloadData()
+            }
         }
     }
     
