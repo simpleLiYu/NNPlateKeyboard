@@ -20,7 +20,7 @@ class UICTViewCellKeyBoard: UICollectionViewCell {
             let isSure = (label.text == "确定")
             if isSure {
                 label.textColor = .white
-                backImgView.image = newValue ? UIImageColor(NNKeyboardView.themeColor) : UIImageColor(UIColor.lightGray)
+                backImgView.image = newValue ? UIImage(color: NNKeyboardView.themeColor) : UIImage(color: UIColor.lightGray)
                 
             } else {
                 label.textColor = newValue ? .black : UIColor(red: 204/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1);
@@ -67,7 +67,7 @@ class UICTViewCellKeyBoard: UICollectionViewCell {
             case "确定":
                 label.isHidden = false;
                 label.textColor = UIColor.white
-                backImgView.image = UIImageColor(UIColor.theme);
+                backImgView.image = UIImage(color: UIColor.theme);
                 backImgView.layer.cornerRadius = 8;
                 backImgView.layer.masksToBounds = true;
                 iconImgView.image = nil
