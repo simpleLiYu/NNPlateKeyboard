@@ -140,7 +140,6 @@ class NNKeyboardView: UIView {
     }
     
     // MARK: - lazy
-    
     lazy var collectionView: UICollectionView = {
         // 初始化
         let layout = UICollectionViewFlowLayout()
@@ -213,7 +212,7 @@ extension NNKeyboardView: UICollectionViewDataSource, UICollectionViewDelegate, 
     func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
         hiddenPromt()
     }
-        
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let rowModels = listModel.rowArray()[indexPath.section]
 //        let keyModel = rowModels[indexPath.row]
