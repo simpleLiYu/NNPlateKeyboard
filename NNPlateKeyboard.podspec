@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'NNPlateKeyboard'
-  s.version          = '1.3.0'
+  s.version          = '1.4.0'
   s.summary          = '车牌键盘重构（重写级别）'
   s.description      = '车牌键盘重构（重写级别）,详情见代码'
 
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/shang1219178163/NNPlateKeyboard.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
   s.swift_version = "5.0"
   s.requires_arc = true
   
