@@ -28,7 +28,8 @@ class UICTViewCellKeyBoard: UICollectionViewCell {
             }
         }
     }
-
+    
+    // MARK: -lifecycle
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -86,7 +87,6 @@ class UICTViewCellKeyBoard: UICollectionViewCell {
 //            guard let value = change![NSKeyValueChangeKey.newKey] as? Bool else { return }
 //            label.textColor = value ? UIColor.white : UIColor.black;
 //            label.textColor = value ? UIColor.black : UIColor.black;
-
         }
     }
     
@@ -137,7 +137,14 @@ class UICTViewCellKeyBoard: UICollectionViewCell {
         view.contentMode = .scaleToFill
         return view;
     }()
-    
   
-    
+    lazy var label: UILabel = {
+        let view = UILabel(frame: .zero);
+        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.font = UIFont.systemFont(ofSize: 15)
+        view.numberOfLines = 0;
+        view.lineBreakMode = .byCharWrapping;
+        view.textAlignment = .center;
+        return view
+    }()
 }
